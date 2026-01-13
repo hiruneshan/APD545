@@ -20,8 +20,8 @@ public abstract class Vehicle implements IVehicleMaintenance, IVehicleOperations
 
     public abstract String getCategory();
 
-    public void getCurrentMilage(){
-
+    public int getCurrentMilage(){
+        return currentMilage;
     }
 
     public double getPurchasePrice(){
@@ -34,7 +34,10 @@ public abstract class Vehicle implements IVehicleMaintenance, IVehicleOperations
 
 
     public int compareTo(Vehicle other){
+        int thisDistance = serviceInterval - (currentMilage % serviceInterval);
+        int otherDistance = other.serviceInterval - (other.currentMilage % other.serviceInterval);
 
+        return Integer.compare(thisDistance, otherDistance);
     }
 
 

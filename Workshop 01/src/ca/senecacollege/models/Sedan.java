@@ -2,16 +2,18 @@ package ca.senecacollege.models;
 
 public class Sedan extends PassengerVehicles{
 
-    public Sedan(String name, double price, int milage, String fuelType, String PrimaryFunction, int serviceInterval) {
-        super(name, price, milage);
+    public Sedan(String name, int milage) {
+        super(name, 28500, milage);
 
-        this.fuelType = fuelType;
-        this.primaryFunction = primaryFunction;
-        this.serviceInterval = serviceInterval;
+        this.fuelType = "Gasoline";
+        this.primaryFunction = "Executive transportation, client visits";
+        this.serviceInterval = 10000;
+        this.maintainanceCost = 350.00;
     }
     @Override
-    public String getCategory() {
-        return "Passenger Vehicle: Sedan";
+    public String getCategory()
+    {
+        return "Economy";
     }
 
     // 2. Fixing methods from IVehicleMaintenance
@@ -25,7 +27,6 @@ public class Sedan extends PassengerVehicles{
         return this.maintainanceCost;
     }
 
-    // 3. Fixing methods from IVehicleOperations
     @Override
     public String getPrimaryFunction() {
         return this.primaryFunction;

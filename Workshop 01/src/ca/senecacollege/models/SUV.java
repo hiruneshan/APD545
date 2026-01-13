@@ -1,35 +1,36 @@
 package ca.senecacollege.models;
 
 public class SUV extends Vehicle{
-    public SUV(String name, double price, int milage, String fuelType, String PrimaryFunction, int serviceInterval) {
-        super(name, price, milage);
+    public SUV(String name, int milage) {
+        super(name,45000 , milage);
 
-        this.fuelType = fuelType;
-        this.primaryFunction = primaryFunction;
-        this.serviceInterval = serviceInterval;
+        this.fuelType = "Hybrid";
+        this.primaryFunction = "Family transport, off-road capability";
+        this.serviceInterval = 12000;
+        this.maintainanceCost = 450.00;
     }
     @Override
     public String getCategory() {
-        return "";
+        return "Premium";
     }
 
     @Override
     public String getPrimaryFunction() {
-        return "";
+        return primaryFunction;
     }
 
     @Override
     public String getFuelType() {
-        return "";
+        return fuelType;
     }
 
     @Override
     public int getServiceInterval() {
-        return 0;
+        return serviceInterval;
     }
 
     @Override
     public double getMaintenanceCost() {
-        return 0;
+        return maintainanceCost;
     }
 }
