@@ -1,32 +1,36 @@
 package ca.senecacollege.models;
 
 public class Ambulance extends SpecializedVehicles{
-    public Ambulance(String name, double purchasePrice, int currentMilage) {
-        super(name, purchasePrice, currentMilage);
+    public Ambulance(String name, int currentMilage) {
+        super(name, 85000, currentMilage);
+        this.fuelType = "Diesal";
+        this.primaryFunction = "Emergency medical transport, life-saving";
+        this.serviceInterval = 8000;
+        this.maintainanceCost = 800.00;
     }
 
     @Override
     public String getCategory() {
-        return "";
+        return "Specialized";
     }
 
     @Override
     public String getPrimaryFunction() {
-        return "";
+        return primaryFunction;
     }
 
     @Override
     public String getFuelType() {
-        return "";
+        return fuelType;
     }
 
     @Override
     public int getServiceInterval() {
-        return 0;
+        return serviceInterval;
     }
 
     @Override
     public double getMaintenanceCost() {
-        return 0;
+        return maintainanceCost;
     }
 }

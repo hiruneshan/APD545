@@ -1,32 +1,36 @@
 package ca.senecacollege.models;
 
 public class Truck extends CommercialVehicles{
-    public Truck(String name, double purchasePrice, int currentMilage) {
-        super(name, purchasePrice, currentMilage);
+    public Truck(String name, int currentMilage) {
+        super(name, 62000, currentMilage);
+        this.fuelType = "Diesel";
+        this.primaryFunction = "Heavy cargo, long-distance hauling";
+        this.serviceInterval = 15000;
+        this.maintainanceCost = 600.00;
     }
 
     @Override
     public String getCategory() {
-        return "";
+        return "Commercial";
     }
 
     @Override
     public String getPrimaryFunction() {
-        return "";
+        return primaryFunction;
     }
 
     @Override
     public String getFuelType() {
-        return "";
+        return fuelType;
     }
 
     @Override
     public int getServiceInterval() {
-        return 0;
+        return serviceInterval;
     }
 
     @Override
     public double getMaintenanceCost() {
-        return 0;
+        return maintainanceCost;
     }
 }

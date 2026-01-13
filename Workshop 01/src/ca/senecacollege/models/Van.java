@@ -1,32 +1,36 @@
 package ca.senecacollege.models;
 
 public class Van extends CommercialVehicles{
-    public Van(String name, double purchasePrice, int currentMilage) {
-        super(name, purchasePrice, currentMilage);
+    public Van(String name, int currentMilage) {
+        super(name, 38000, currentMilage);
+        this.fuelType = "Gasoline";
+        this.primaryFunction = "Passenger group transport, deliveries";
+        this.serviceInterval = 10000;
+        this.maintainanceCost = 400.00;
     }
 
     @Override
     public String getCategory() {
-        return "";
+        return "Commercial";
     }
 
     @Override
     public String getPrimaryFunction() {
-        return "";
+        return primaryFunction;
     }
 
     @Override
     public String getFuelType() {
-        return "";
+        return fuelType;
     }
 
     @Override
     public int getServiceInterval() {
-        return 0;
+        return serviceInterval;
     }
 
     @Override
     public double getMaintenanceCost() {
-        return 0;
+        return maintainanceCost;
     }
 }
