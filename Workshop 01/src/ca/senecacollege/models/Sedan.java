@@ -4,6 +4,10 @@ public class Sedan extends PassengerVehicles{
 
     public Sedan(String name, double price, int milage, String fuelType, String PrimaryFunction, int serviceInterval) {
         super(name, price, milage);
+
+        this.fuelType = fuelType;
+        this.primaryFunction = primaryFunction;
+        this.serviceInterval = serviceInterval;
     }
     @Override
     public String getCategory() {
