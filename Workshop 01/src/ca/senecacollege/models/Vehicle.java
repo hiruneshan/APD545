@@ -30,7 +30,7 @@ public abstract class Vehicle
     }
 
     public String toString(){
-        return
+        return name + " - $" + purchasePrice;
     }
 
 
