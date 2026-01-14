@@ -1,6 +1,6 @@
 package ca.senecacollege.models;
 
-public class SUV extends Vehicle{
+public class SUV extends PassengerVehicles{
     public SUV(String name, int milage) {
         super(name,45000 , milage);
 
