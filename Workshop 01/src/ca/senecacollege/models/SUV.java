@@ -7,7 +7,7 @@ public class SUV extends Vehicle{
         this.fuelType = "Hybrid";
         this.primaryFunction = "Family transport, off-road capability";
         this.serviceInterval = 12000;
-        this.maintainanceCost = 450.00;
+        this.maintenanceCost = 450.00;
     }
     @Override
     public String getCategory() {
@@ -31,6 +31,6 @@ public class SUV extends Vehicle{
 
     @Override
     public double getMaintenanceCost() {
-        return maintainanceCost;
+        return maintenanceCost;
     }
 }

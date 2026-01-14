@@ -6,7 +6,7 @@ public class Van extends CommercialVehicles{
         this.fuelType = "Gasoline";
         this.primaryFunction = "Passenger group transport, deliveries";
         this.serviceInterval = 10000;
-        this.maintainanceCost = 400.00;
+        this.maintenanceCost = 400.00;
     }
 
     @Override
@@ -31,6 +31,6 @@ public class Van extends CommercialVehicles{
 
     @Override
     public double getMaintenanceCost() {
-        return maintainanceCost;
+        return maintenanceCost;
     }
 }

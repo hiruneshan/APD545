@@ -8,7 +8,7 @@ public class Sedan extends PassengerVehicles{
         this.fuelType = "Gasoline";
         this.primaryFunction = "Executive transportation, client visits";
         this.serviceInterval = 10000;
-        this.maintainanceCost = 350.00;
+        this.maintenanceCost = 350.00;
     }
     @Override
     public String getCategory()
@@ -24,7 +24,7 @@ public class Sedan extends PassengerVehicles{
 
     @Override
     public double getMaintenanceCost() {
-        return this.maintainanceCost;
+        return this.maintenanceCost;
     }
 
     @Override

@@ -6,7 +6,7 @@ public class Ambulance extends SpecializedVehicles{
         this.fuelType = "Diesal";
         this.primaryFunction = "Emergency medical transport, life-saving";
         this.serviceInterval = 8000;
-        this.maintainanceCost = 800.00;
+        this.maintenanceCost = 800.00;
     }
 
     @Override
@@ -31,6 +31,6 @@ public class Ambulance extends SpecializedVehicles{
 
     @Override
     public double getMaintenanceCost() {
-        return maintainanceCost;
+        return maintenanceCost;
     }
 }

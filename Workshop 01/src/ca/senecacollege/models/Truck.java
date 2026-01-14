@@ -6,7 +6,7 @@ public class Truck extends CommercialVehicles{
         this.fuelType = "Diesel";
         this.primaryFunction = "Heavy cargo, long-distance hauling";
         this.serviceInterval = 15000;
-        this.maintainanceCost = 600.00;
+        this.maintenanceCost = 600.00;
     }
 
     @Override
@@ -31,6 +31,6 @@ public class Truck extends CommercialVehicles{
 
     @Override
     public double getMaintenanceCost() {
-        return maintainanceCost;
+        return maintenanceCost;
     }
 }
