@@ -30,12 +30,13 @@ public abstract class Vehicle
     }
 
     public String toString(){
-        return name + " - $" + purchasePrice;
+        return name + " - $" + String.format("%,.1f", purchasePrice);
     }
 
     public String getName(){
         return name;
     }
+
     public int compareTo(Vehicle other){
         int thisDistance = serviceInterval - (currentMileage % serviceInterval);
         if (thisDistance == serviceInterval){

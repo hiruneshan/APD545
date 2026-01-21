@@ -1,14 +1,13 @@
-/***********
- Workshop # 1
- Course: [Subject #] - [Semester]
- Last Name: [Student Last Name]
- First Name: [Student First Name]
- ID: [Student ID]
- *********
+/***********************************************
+ Workshop # 01
+ Course: APD545 - 04
+ Last Name: Wijemanne
+ First Name: Hiru
+ ID: 135257236
  This assignment represents my own work in accordance
  with Seneca Academic Policy.
- Date: January 14, 2026
- *********************/
+ Date: 1/20/2026
+ ***********************************************/
 package ca.senecacollege.controllers;
 
 import ca.senecacollege.models.*;

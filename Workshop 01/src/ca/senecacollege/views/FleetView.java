@@ -1,14 +1,13 @@
-/***********
- Workshop # 1
- Course: [Subject #] - [Semester]
- Last Name: [Student Last Name]
- First Name: [Student First Name]
- ID: [Student ID]
- *********
+/***********************************************
+ Workshop # 01
+ Course: APD545 - 04
+ Last Name: Wijemanne
+ First Name: Hiru
+ ID: 135257236
  This assignment represents my own work in accordance
  with Seneca Academic Policy.
- Date: January 14, 2026
- *********************/
+ Date: 1/20/2026
+ ***********************************************/
 package ca.senecacollege.views;
 
 import ca.senecacollege.models.Vehicle;
@@ -21,32 +20,35 @@ public class FleetView {
     // Requirement 1
     public int readMileage(String vehicleName) {
         System.out.print("Enter the current mileage for " + vehicleName + " (km): ");
-        return scanner.nextInt();
+        int mileage = scanner.nextInt();
+        scanner.nextLine(); // Clear buffer after nextInt()
+        return mileage;
     }
 
     // Requirement 2
     public void displayUrgentVehicle(Vehicle v) {
         System.out.println("\n--: Requirement 2:--");
         if (v != null) {
-            System.out.println("The vehicle requiring the most urgent maintenance is: " + v.getName());
-            System.out.println(v.getName() + "'s purchase price is: $" + v.getPurchasePrice());
-            System.out.println(v.getName() + "'s primary function: " + v.getPrimaryFunction());
-            System.out.println(v.getName() + "'s service interval: Every " + v.getServiceInterval() + " km");
-            System.out.println(v.getName() + "'s maintenance cost: $" + v.getMaintenanceCost());
+            String name = v.getName();
+            System.out.println("The vehicle requiring the most urgent maintenance is: " + name);
+
+            System.out.printf("%s's purchase price is: $%,.1f%n", name, v.getPurchasePrice());
+            System.out.printf("%s's primary function: %s%n", name, v.getPrimaryFunction());
+            System.out.printf("%s's service interval: Every %,d km%n", name, v.getServiceInterval());
+            System.out.printf("%s's maintenance cost: $%,.1f%n", name, v.getMaintenanceCost());
         }
     }
 
-
+    // Requirement 3
     public void displayVehiclesByPrice(List<Vehicle> fleet) {
         System.out.println("\n--: Requirement 3 :--");
         System.out.println("Vehicles in Descending Order of Purchase Price:");
         for (Vehicle v : fleet) {
-
             System.out.println(v.toString());
         }
     }
 
-    // Requirement 4:
+    // Requirement 4
     public String askCategory() {
         System.out.println("\n--: Requirement 4:--");
         System.out.print("Enter a vehicle category (PassengerVehicles, CommercialVehicles, SpecializedVehicles): ");
@@ -55,19 +57,25 @@ public class FleetView {
 
     public void displayCategoryVehicles(String categoryName, List<Vehicle> vehicles) {
         System.out.println("Vehicles in " + categoryName + " Category:");
-        for (Vehicle v : vehicles) {
-            System.out.println(v.getName() + " Primary Function: " + v.getPrimaryFunction() +
-                    " Fuel Type: " + v.getFuelType());
+        if (vehicles.isEmpty()) {
+            System.out.println("No vehicles found in this category.");
+        } else {
+            for (Vehicle v : vehicles) {
+                System.out.println(v.getName() + " Primary Function: " + v.getPrimaryFunction() +
+                        " | Fuel Type: " + v.getFuelType());
+            }
         }
     }
 
+    // Requirement 5 & 6
     public void displayMaintenanceUrgency(List<Vehicle> fleet) {
         System.out.println("\n--: Requirement 5 & 6:--");
         System.out.println("Vehicles sorted by maintenance urgency (closest to service interval first):");
         for (Vehicle v : fleet) {
+            // Logic to calculate remaining km until next service
             int remaining = v.getServiceInterval() - (v.getCurrentMileage() % v.getServiceInterval());
-            System.out.println(v.getName() + " (" + v.getCurrentMileage() + " km / " +
-                    v.getServiceInterval() + " km - " + remaining + " km remaining)");
+            System.out.printf("%s (%,d km / %,d km - %,d km remaining)%n",
+                    v.getName(), v.getCurrentMileage(), v.getServiceInterval(), remaining);
         }
     }
 }
