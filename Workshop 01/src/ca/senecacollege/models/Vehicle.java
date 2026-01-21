@@ -38,16 +38,14 @@ public abstract class Vehicle
     }
 
     public int compareTo(Vehicle other){
-        int thisDistance = serviceInterval - (currentMileage % serviceInterval);
-        if (thisDistance == serviceInterval){
-            thisDistance = 0;
-        }
-        int otherDistance = other.serviceInterval - (other.currentMileage % other.serviceInterval);
-        if (otherDistance == other.serviceInterval){
-            otherDistance = 0;
-        }
+
+        int thisDistance = this.serviceInterval - this.currentMileage;
+
+
+        int otherDistance = other.serviceInterval - other.currentMileage;
 
         return Integer.compare(thisDistance, otherDistance);
+
     }
 
 

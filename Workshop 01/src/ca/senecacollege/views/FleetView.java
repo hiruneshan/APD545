@@ -21,7 +21,7 @@ public class FleetView {
     public int readMileage(String vehicleName) {
         System.out.print("Enter the current mileage for " + vehicleName + " (km): ");
         int mileage = scanner.nextInt();
-        scanner.nextLine(); // Clear buffer after nextInt()
+        scanner.nextLine(); // Clearing buffer after nextInt()
         return mileage;
     }
 
@@ -71,11 +71,17 @@ public class FleetView {
     public void displayMaintenanceUrgency(List<Vehicle> fleet) {
         System.out.println("\n--: Requirement 5 & 6:--");
         System.out.println("Vehicles sorted by maintenance urgency (closest to service interval first):");
+
         for (Vehicle v : fleet) {
-            // Logic to calculate remaining km until next service
-            int remaining = v.getServiceInterval() - (v.getCurrentMileage() % v.getServiceInterval());
-            System.out.printf("%s (%,d km / %,d km - %,d km remaining)%n",
-                    v.getName(), v.getCurrentMileage(), v.getServiceInterval(), remaining);
+
+            int remaining = v.getServiceInterval() - v.getCurrentMileage();
+
+            System.out.printf("%s (%,d km / %,d km - %,d km %s)%n",
+                    v.getName(),
+                    v.getCurrentMileage(),
+                    v.getServiceInterval(),
+                    Math.abs(remaining),
+                    remaining < 0 ? "overdue" : "remaining"); // if the user has gone over board with the mileage, it will print overdue
         }
     }
 }
